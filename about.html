@@ -45,6 +45,16 @@
           Menu
         </button>
         <!-- buttons - end -->
+        <div class="hidden h-screen w-screen absolute top-0 left-0 bg-white z-10 justify-center items-start"
+          id="mobile-nav">
+          <nav class="gap-12 flex flex-col justify-center items-center h-full">
+            <a href="./index.html" class="text-lg font-semibold text-neutral-900">Home</a>
+            <a href="./gallery.html"
+              class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-neutral-900 active:text-neutral-700">Gallery</a>
+            <a href="./about.html"
+              class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-neutral-900 active:text-neutral-700">About</a>
+          </nav>
+        </div>
       </header>
 
       <section
@@ -145,3 +155,14 @@
 </body>
 
 </html>
+
+<script>
+  const mobileNav = document.getElementById('mobile-nav');
+  const menuButton = document.getElementById('menu-button');
+
+  menuButton.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+    mobileNav.classList.toggle('flex');
+    document.body.classList.toggle('overflow-hidden');
+  }); 
+</script>
